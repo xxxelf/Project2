@@ -1,10 +1,17 @@
 const express = require("express");
 const authRoutes = express.Router();
 // User model
-const User = require("../../models/user");
+const User = require("../models/user");
 // BCrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
+const passport = require("passport");
+// Safe routes with Passport
+// const ensureLogin = require("connect-ensure-login");
+// authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
+//     res.render("private", { user: req.user });
+//   });
+
 
 authRoutes.get("/signup", (req, res, next) => {
     res.render("signup");
@@ -16,7 +23,7 @@ authRoutes.post("/signup", (req, res, next) => {
 
     // Validation
     if (username === "" || password === "") {
-        res.render("auth/signup", {
+        res.render("signup", {
             errorMessage: "Indicate a username and a password to sign up"
         });
         return;
@@ -28,7 +35,7 @@ authRoutes.post("/signup", (req, res, next) => {
         "username",
         (err, user) => {
             if (user !== null) {
-                res.render("auth/signup", {
+                res.render("signup", {
                     errorMessage: "The username already exists"
                 });
                 return;
@@ -46,10 +53,32 @@ authRoutes.post("/signup", (req, res, next) => {
                 res.redirect("/");
             });
         });
-
-
-
-
 });
+
+//Login
+authRoutes.get("/login", (req, res, next) => {
+    res.render("login");
+});
+
+authRoutes.post("/login", passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+    passReqToCallback: true
+}));
+authRoutes.get("/login", (req, res, next) => {
+    res.render("login", {
+        "message": req.flash("error")
+    });
+});
+
+//Logout
+authRoutes.get("/logout", (req, res) => {
+    req.logout();
+    res.redirect("/login");
+});
+
+
+
 
 module.exports = authRoutes;
