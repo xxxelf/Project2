@@ -7,11 +7,11 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const index = require('./routes/index');
-const users = require('./routes/users');
 const app = express();
 const auth = require('./routes/auth');
 const session = require("express-session");
 const mongoose = require('mongoose');
+const expressLayouts = require('express-ejs-layouts');
 
 //passport
 const bcrypt = require("bcrypt");
@@ -21,8 +21,10 @@ const User = require('./models/user');
 const flash = require('connect-flash');
 
 // view engine setup
+app.use(expressLayouts);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.set('layout', 'layouts/main');
 
 // Mongoose configuration DATABASE
 mongoose.Promise = Promise;
@@ -87,10 +89,18 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+//Show the user that is logged.
+app.use((req, res, next) => {
+  res.locals = {
+    user: req.user
+  };
+  next();
+});
 app.use('/', index);
-app.use('/users', users);
 app.use('/', auth);
+
+
+
 
 //Configure the express-session
 app.use(session({

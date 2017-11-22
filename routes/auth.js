@@ -60,8 +60,14 @@ authRoutes.get("/login", (req, res, next) => {
     res.render("login");
 });
 
+//Redirect
+authRoutes.get("/index", (req, res, next) => {
+    res.render("index");
+});
+
+
 authRoutes.post("/login", passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/index",
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
@@ -73,12 +79,9 @@ authRoutes.get("/login", (req, res, next) => {
 });
 
 //Logout
-authRoutes.get("/logout", (req, res) => {
+authRoutes.post('/logout', (req, res) => {
     req.logout();
-    res.redirect("/login");
+    res.redirect('/login');
 });
-
-
-
 
 module.exports = authRoutes;
