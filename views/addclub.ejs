@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Add Club</title>
+</head>
+
+<body>
+    <form id="form" action="/addclub" method="POST">
+        <label for="clubname">Clubname</label>
+        <br>
+        <input type="text" name="clubname" placeholder="theBigLebowsky">
+
+        <br>
+        <br>
+        <label for="Location">Location</label>
+        <br>
+        <input type="text" name="location" placeholder="highstreet420">
+        <br>
+        <label for="Phonenumber">Phonenumber</lable>
+            <br>
+            <input type="text" name="phonenumber" placeholder="420420420420">
+            <br>
+            <br>
+
+            <input type="submit" value="Add">
+    </form>
+
+    <% if (typeof(errorMessage) != "undefined") { %>
+        <div class="error-message">
+            <%= errorMessage %>
+        </div>
+        <% } %>
+</body>
+
+</html>
