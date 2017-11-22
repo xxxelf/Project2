@@ -34,10 +34,11 @@ router.get('/addclub', (req, res, next) => {
 //New club
 router.post("/addclub", (req, res, next) => {
   const clubname = req.body.clubname;
-  const location = req.body.location;
+  const address = req.body.address;
   const phonenumber = req.body.phonenumber;
+  const website = req.body.website;
   // Validation
-  if (clubname === "" || location === "" || phonenumber === "") {
+  if (clubname === "" || phonenumber === "" || req.body.latitude === "" || req.body.longitude === "") {
     res.render("addclub", {
       errorMessage: "Indicate a clubname, location and a phonenumber to add a Club"
     });
@@ -45,31 +46,38 @@ router.post("/addclub", (req, res, next) => {
   };
 
   //Check if the club already exis
-  Club.findOne({
-      "clubname": clubname
-    },
-    "clubname",
-    (err, club) => {
-      if (club !== null) {
-        res.render("addclub", {
-          errorMessage: "The clubname already exists"
-        });
-        return;
-      }
-
-      // var salt = bcrypt.genSaltSync(bcryptSalt);
-      // var hashPass = bcrypt.hashSync(password, salt);
-
-      const newClub = Club({
-        clubname,
-        location,
-        phonenumber
+  const criteria = {
+    "clubname": clubname
+  };
+  Club.findOne(criteria, (err, club) => {
+    if (club !== null) {
+      res.render("addclub", {
+        errorMessage: "The clubname already exists"
       });
-      //Save the club
-      newClub.save((err) => {
-        res.redirect('/');
-      });
+      return;
+    }
+
+    // var salt = bcrypt.genSaltSync(bcryptSalt);
+    // var hashPass = bcrypt.hashSync(password, salt);
+    // Get Params from POST
+    let location = {
+      type: 'Point',
+      coordinates: [req.body.longitude, req.body.latitude]
+    };
+
+    const newClub = new Club({
+      clubname,
+      address,
+      phonenumber,
+      website,
+      location
     });
+
+    //Save the club
+    newClub.save((err) => {
+      res.redirect('/');
+    });
+  });
 });
 
 
