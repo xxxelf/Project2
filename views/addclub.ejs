@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <title>Add Club</title>
-</head>
-
-<body>
+<div class="hero-text">
     <form id="form" action="/addclub" method="POST">
         <label for="clubname">Clubname</label>
         <br>
@@ -37,14 +26,6 @@
             <input type="text" name="longitude" placeholder="">
             <br>
             <br>
-            <input type="submit" value="Add">
+            <input type="image" src="imgs/leaf.png">
     </form>
-
-    <% if (typeof(errorMessage) != "undefined") { %>
-        <div class="error-message">
-            <%= errorMessage %>
-        </div>
-        <% } %>
-</body>
-
-</html>
+</div>
