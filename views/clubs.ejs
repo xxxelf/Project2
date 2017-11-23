@@ -1,3 +1,18 @@
+<div><div class="dropdown">
+        <button class="dropbtn">logged in as
+                <%=user.username%></button>
+        <div class="dropdown-content">
+            <div >
+                <a href="/addclub">add club</a>
+            </div>
+                <div>
+            <a href="#"><form action="/logout" method="post">
+                <button id="logginout">Bye, I'm High</button>
+            </form></a>
+        </div>
+          
+        </div>
+      </div></div>
 <div class="hero-textb">
     <h3>Weed Map</h3>
     <div>
@@ -21,7 +36,7 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <script type="text/javascript">
-        var club = <% - JSON.stringify(clubs); %>
+        var club = <%- JSON.stringify(clubs); %>
     </script>
     <script type="text/javascript" src="javascripts/main.js"></script>
 

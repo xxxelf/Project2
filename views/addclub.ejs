@@ -1,3 +1,18 @@
+<div><div class="dropdown">
+        <button class="dropbtn">logged in as
+                <%=user.username%></button>
+        <div class="dropdown-content">
+            <div >
+                <a href="/clubs">Weed Map</a>
+            </div>
+                <div>
+            <a href="#"><form action="/logout" method="post">
+                <button id="logginout">Bye, I'm High</button>
+            </form></a>
+        </div>
+          
+        </div>
+      </div></div>
 <div class="hero-text">
     <form id="form" action="/addclub" method="POST">
         <label for="clubname">Clubname</label>
@@ -19,6 +34,21 @@
             <label for="website">Website</label>
             <br>
             <input type="text" name="website" placeholder="">
+            <br>
+            <br>
+            <label for=“weed”>Best Type Weed</label>
+            <br>
+            <input type=“text” name=“weed” placeholder=>
+            <br>
+            <br>
+            <lable for=“opens”>Opens at</lable>
+            <br>
+            <input type=“time” name=“open”>
+            <br>
+            <br>
+            <lable for=“closes”>Closes at</lable>
+            <br>
+            <input type=“time” name=“close”>
             <br>
             <br>
             <label>Location</label>
