@@ -27,8 +27,14 @@ router.get('/profile', ensureAuthenticated, (req, res, next) => {
 
 // Get clubs page
 router.get('/clubs', ensureAuthenticated, (req, res, next) => {
-  res.render('clubs', {
-    user: req.user
+  Club.find({}, (err, result) => {
+    if (err) {
+      return next(err);
+    }
+    const data = {
+      clubs: result
+    }
+    res.render('clubs', data);
   });
 });
 
