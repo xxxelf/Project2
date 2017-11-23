@@ -9,30 +9,45 @@ router.get('/', function (req, res, next) {
   res.render('index');
 });
 
+// Ensure pages
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('/login')
+  }
+}
 // Get profile page
 
-router.get('/profile', (req, res, next) => {
-  res.render('profile');
+router.get('/profile', ensureAuthenticated, (req, res, next) => {
+  res.render('profile', {
+    user: req.user
+  });
 });
 
 // Get clubs page
-
-router.get('/clubs', (req, res, next) => {
-  res.render('clubs');
+router.get('/clubs', ensureAuthenticated, (req, res, next) => {
+  res.render('clubs', {
+    user: req.user
+  });
 });
 
 //Get each club page info
 
-router.get('/clubs/:id', (req, res, next) => {
-  res.render('clubsinfo');
+router.get('/clubs/:id', ensureAuthenticated, (req, res, next) => {
+  res.render('clubsinfo', {
+    user: req.user
+  });
 });
 //Get add club page
-router.get('/addclub', (req, res, next) => {
-  res.render('addclub');
+router.get('/addclub', ensureAuthenticated, (req, res, next) => {
+  res.render('addclub', {
+    user: req.user
+  });
 });
 
 //New club
-router.post("/addclub", (req, res, next) => {
+router.post("/addclub", ensureAuthenticated, (req, res, next) => {
   const clubname = req.body.clubname;
   const address = req.body.address;
   const phonenumber = req.body.phonenumber;
