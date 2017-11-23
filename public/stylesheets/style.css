@@ -25,7 +25,6 @@ html {
   height: 100%;
 }
 
-
 /* The hero image */
 
 .hero-image {
@@ -40,7 +39,6 @@ html {
   position: relative;
 }
 
-
 /* Place text in the middle of the image */
 
 .hero-text {
@@ -49,6 +47,9 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  color: white;
+}
+.hero-textb {
   color: white;
 }
 
@@ -90,17 +91,9 @@ input.placeholder {
   text-align: center;
 }
 
-<<<<<<< HEAD
-
 /*MAP*/
 
 #map {
   height: 500px;
   width: 100%;
 }
-=======
-#map {
-  height: 500px;
-  width: 100%;
-}
->>>>>>> e0321d7ed8702b235b7578a1f83847b52b27f27b
