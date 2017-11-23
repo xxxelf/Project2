@@ -14,24 +14,24 @@
 
 
     <div class="hero-image">
-        <div class="hero-text">
-
-
-            <%- body -%>
 
 
 
-        </div>
-        <div>
-            <% if (user) { %>
-                <p>logged in as
-                    <%=user.username%>
-                </p>
-                <form action="/logout" method="post">
-                    <button>Bye, I'm High</button>
-                </form>
-                <% } %>
-        </div>
+        <%- body -%>
+
+
+
+
+            <div>
+                <% if (user) { %>
+                    <p>logged in as
+                        <%=user.username%>
+                    </p>
+                    <form action="/logout" method="post">
+                        <button>Bye, I'm High</button>
+                    </form>
+                    <% } %>
+            </div>
     </div>
     <!-- <footer>
         <% if (user) { %>

@@ -82,3 +82,8 @@ button {
 input.placeholder {
   text-align: center;
 }
+
+#map {
+  height: 500px;
+  width: 100%;
+}

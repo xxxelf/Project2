@@ -1,38 +1,27 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
+<div class="hero-text">
+    <form id="form" action="/signup" method="POST">
+        <div>
+            <h1>Sign Up</h1>
+            <label for="username">Username</label>
+            <br>
+            <input class="placeholder" type="text" name="username" placeholder="Mary.J.Dealer">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <title>Sign Up</title>
-</head> -->
+            <br>
+            <br>
+            <label for="password">Password</label>
+            <br>
+            <input class="placeholder" type="password" name="password" placeholder="MunchCitty420">
+            <br>
+            <br>
 
-<!-- <body> -->
-<form id="form" action="/signup" method="POST">
-    <div>
-        <h1>Sign Up</h1>
-        <label for="username">Username</label>
-        <br>
-        <input class="placeholder" type="text" name="username" placeholder="Mary.J.Dealer">
-
-        <br>
-        <br>
-        <label for="password">Password</label>
-        <br>
-        <input class="placeholder" type="password" name="password" placeholder="MunchCitty420">
-        <br>
-        <br>
-
-        <input id="signup" type="image" src="imgs/leaf.png" width: 10px;/>
+            <input id="signup" type="image" src="imgs/leaf.png" width: 10px;/>
 
 
-        <% if (typeof(errorMessage) != "undefined") { %>
-            <div class="error-message">
-                <%= errorMessage %>
-            </div>
-            <% } %>
-    </div>
-</form>
-<!-- </html> -->
+            <% if (typeof(errorMessage) != "undefined") { %>
+                <div class="error-message">
+                    <%= errorMessage %>
+                </div>
+                <% } %>
+        </div>
+    </form>
+</div>
