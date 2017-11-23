@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -7,30 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="stylesheets/style.css">
     <title>Sign Up</title>
-</head>
+</head> -->
 
-<body>
-    <form id="form" action="/signup" method="POST">
+<!-- <body> -->
+<form id="form" action="/signup" method="POST">
+    <div>
+        <h1>Signup</h1>
         <label for="username">Username</label>
         <br>
-        <input type="text" name="username" placeholder="AnakinSkywalker">
+        <input class="placeholder" type="text" name="username" placeholder="Mary.J.Dealer">
 
         <br>
         <br>
         <label for="password">Password</label>
         <br>
-        <input type="password" name="password" placeholder="DeathStar">
+        <input class="placeholder" type="password" name="password" placeholder="MunchCitty420">
         <br>
         <br>
 
-        <button>Create account</button>
-    </form>
+        <input id="signup" type="image" src="imgs/leaf.png" width: 10px;/>
 
-    <% if (typeof(errorMessage) != "undefined") { %>
-        <div class="error-message">
-            <%= errorMessage %>
-        </div>
-        <% } %>
-</body>
 
-</html>
+        <% if (typeof(errorMessage) != "undefined") { %>
+            <div class="error-message">
+                <%= errorMessage %>
+            </div>
+            <% } %>
+    </div>
+</form>
+<!-- </html> -->

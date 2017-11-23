@@ -6,19 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>iSmoke BCN</title>
+    <title>SMOKE-BCN</title>
 </head>
 
-<body>
-    <% if (user) { %>
-        <p>logged in as
-            <%=user.username%>
-        </p>
-        <form action="/logout" method="post">
-            <button>Bye, I'm High</button>
-        </form>
-        <% } %>
+<body scroll="no" style="overflow: hidden" padding="0px;">
+
+
+    <div class="hero-image">
+        <div class="hero-text">
+
+
             <%- body -%>
+
+
+
+        </div>
+        <div>
+            <% if (user) { %>
+                <p>logged in as
+                    <%=user.username%>
+                </p>
+                <form action="/logout" method="post">
+                    <button>Bye, I'm High</button>
+                </form>
+                <% } %>
+        </div>
+    </div>
+    <!-- <footer>
+        <% if (user) { %>
+            <p>logged in as
+                <%=user.username%>
+            </p>
+            <form action="/logout" method="post">
+                <button>Bye, I'm High</button>
+            </form>
+            <% } %>
+
+
+    </footer> -->
 </body>
 
 </html>

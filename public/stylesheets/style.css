@@ -2,7 +2,81 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+html {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+  /* The image used */
+  background-image: url("/imgs/bkgrnd.jpg");
+
+  /* Set a specific height */
+  height: 100%;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+input {
+  background: transparent;
+  border: none;
+}
+
+#signup {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.8s ease-in-out;
+  transition: transform 0.8s ease-in-out;
+}
+#signup.hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.mainstuff {
+  color: white;
+  text-decoration: none;
+}
+hr {
+  clear: both;
+  visibility: hidden;
+}
+
+textarea,
+input,
+button {
+  outline: none;
+  caret-color: white;
+  color: white;
+}
+
+input.placeholder {
+  text-align: center;
 }

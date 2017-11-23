@@ -12,76 +12,79 @@ const passport = require("passport");
 //     res.render("private", { user: req.user });
 //   });
 
-
 authRoutes.get("/signup", (req, res, next) => {
-    res.render("signup");
+  res.render("signup");
 });
 
 authRoutes.post("/signup", (req, res, next) => {
-    const username = req.body.username;
-    const password = req.body.password;
+  const username = req.body.username;
+  const password = req.body.password;
 
-    // Validation
-    if (username === "" || password === "") {
+  // Validation
+  if (username === "" || password === "") {
+    res.render("signup", {
+      errorMessage: "Indicate a username and a password to sign up"
+    });
+    return;
+  }
+  //Check if the user already exist
+  User.findOne(
+    {
+      username: username
+    },
+    "username",
+    (err, user) => {
+      if (user !== null) {
         res.render("signup", {
-            errorMessage: "Indicate a username and a password to sign up"
+          errorMessage: "The username already exists"
         });
         return;
+      }
+
+      var salt = bcrypt.genSaltSync(bcryptSalt);
+      var hashPass = bcrypt.hashSync(password, salt);
+
+      var newUser = User({
+        username,
+        password: hashPass
+      });
+      //Save the user
+      newUser.save(err => {
+        res.redirect("/clubs");
+      });
     }
-    //Check if the user already exist
-    User.findOne({
-            "username": username
-        },
-        "username",
-        (err, user) => {
-            if (user !== null) {
-                res.render("signup", {
-                    errorMessage: "The username already exists"
-                });
-                return;
-            }
-
-            var salt = bcrypt.genSaltSync(bcryptSalt);
-            var hashPass = bcrypt.hashSync(password, salt);
-
-            var newUser = User({
-                username,
-                password: hashPass
-            });
-            //Save the user
-            newUser.save((err) => {
-                res.redirect("/");
-            });
-        });
+  );
 });
 
 //Login
 authRoutes.get("/login", (req, res, next) => {
-    res.render("login");
+  res.render("login");
 });
 
 //Redirect
 authRoutes.get("/index", (req, res, next) => {
-    res.render("index");
+  res.render("index");
 });
 
-
-authRoutes.post("/login", passport.authenticate("local", {
-    successRedirect: "/index",
+authRoutes.post(
+  "/login",
+  passport.authenticate("local", {
+    successRedirect: "/clubs",
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
-}));
+  })
+);
 authRoutes.get("/login", (req, res, next) => {
-    res.render("login", {
-        "message": req.flash("error")
-    });
+  res.render("login", {
+    message: req.flash("error")
+  });
 });
 
 //Logout
-authRoutes.post('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/login');
+authRoutes.post("/logout", (req, res) => {
+  req.logout();
+  res.redirect("/login");
 });
 
 module.exports = authRoutes;
