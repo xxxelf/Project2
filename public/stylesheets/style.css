@@ -1,7 +1,9 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Montserrat;
+  font-size: 14px;
 }
+
 html {
   -webkit-background-size: cover;
   -moz-background-size: cover;

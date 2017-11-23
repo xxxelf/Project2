@@ -12,6 +12,7 @@ const auth = require('./routes/auth');
 const session = require("express-session");
 const mongoose = require('mongoose');
 const expressLayouts = require('express-ejs-layouts');
+const MongoStore = require('connect-mongo')(session);
 
 //passport
 const bcrypt = require("bcrypt");
@@ -99,15 +100,20 @@ app.use((req, res, next) => {
 app.use('/', index);
 app.use('/', auth);
 
-
-
-
 //Configure the express-session
 app.use(session({
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  }),
   secret: "our-passport-local-strategy-app",
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 24 * 60 * 60 * 1000
+  }
 }));
+
 // NOTE: requires a views/not-found.ejs template
 app.use(function (req, res, next) {
   res.status(404);

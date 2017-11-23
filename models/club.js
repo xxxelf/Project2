@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const clubSchema = new Schema({
     clubname: String,
-    adress: String,
+    address: String,
     phonenumber: String,
     location: {
         type: {
