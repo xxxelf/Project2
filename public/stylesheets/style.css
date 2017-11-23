@@ -10,9 +10,11 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
 a {
   color: #00b7ff;
 }
+
 body {
   padding: 0px;
   margin: 0px;
@@ -23,14 +25,14 @@ html {
   height: 100%;
 }
 
+
 /* The hero image */
+
 .hero-image {
   /* The image used */
   background-image: url("/imgs/bkgrnd.jpg");
-
   /* Set a specific height */
   height: 100%;
-
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
@@ -38,7 +40,9 @@ html {
   position: relative;
 }
 
+
 /* Place text in the middle of the image */
+
 .hero-text {
   text-align: center;
   position: absolute;
@@ -47,6 +51,7 @@ html {
   transform: translate(-50%, -50%);
   color: white;
 }
+
 input {
   background: transparent;
   border: none;
@@ -57,6 +62,7 @@ input {
   -webkit-transition: -webkit-transform 0.8s ease-in-out;
   transition: transform 0.8s ease-in-out;
 }
+
 #signup.hover {
   -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
@@ -66,6 +72,7 @@ input {
   color: white;
   text-decoration: none;
 }
+
 hr {
   clear: both;
   visibility: hidden;
@@ -81,4 +88,12 @@ button {
 
 input.placeholder {
   text-align: center;
+}
+
+
+/*MAP*/
+
+#map {
+  height: 500px;
+  width: 100%;
 }

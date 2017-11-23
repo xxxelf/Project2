@@ -15,7 +15,7 @@ function startMap() {
     let markers = [];
     club.forEach(function (club) {
         var contentString = `<h2"> ${club.clubname}</h2>
-        <h3> ${club.adress}</h3>
+        <h3> ${club.address}</h3>
         <h3> ${club.phonenumber}</h3>`
 
         let title = club.clubname;
