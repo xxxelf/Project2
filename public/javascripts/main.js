@@ -14,6 +14,10 @@ function startMap() {
     // Add clubs markers to map
     let markers = [];
     club.forEach(function (club) {
+        var contentString = `<h2"> ${club.clubname}</h2>
+        <h3> ${club.adress}</h3>
+        <h3> ${club.phonenumber}</h3>`
+
         let title = club.clubname;
         console.log(club.location);
         let position = {
@@ -25,9 +29,16 @@ function startMap() {
             map,
             title
         });
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
+
+        pin.addListener('click', function () {
+            infowindow.open(map, pin);
+        });
         markers.push(pin)
+
     });
-    console.log("Hey");
 }
 
 window.addEventListener("load", function () {
