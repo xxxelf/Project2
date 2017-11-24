@@ -57,6 +57,13 @@ html {
 input {
   background: transparent;
   border: none;
+ 
+}
+.inputz {
+  background: transparent;
+  border: none;
+  background-color: rgba(163, 163, 163, 0.4);
+  text-align: center;
 }
 
 #signup {
@@ -147,4 +154,11 @@ input.placeholder {
 
 #logginout{
   color:black
+}
+
+.inputlogin{
+  background: transparent;
+  border: none;
+  background-color: rgba(163, 163, 163, 0.4);
+  
 }

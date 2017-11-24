@@ -82,7 +82,7 @@ authRoutes.get("/login", (req, res, next) => {
 });
 
 //Logout
-authRoutes.post("/logout", (req, res) => {
+authRoutes.get("/logout", (req, res) => {
   req.logout();
   res.redirect("/login");
 });

@@ -3,12 +3,12 @@
                 <%=user.username%></button>
         <div class="dropdown-content">
             <div >
-                <a href="/clubs">Weed Map</a>
+                <a href="/clubs">Clubs</a>
             </div>
                 <div>
-            <a href="#"><form action="/logout" method="post">
-                <button id="logginout">Bye, I'm High</button>
-            </form></a>
+            
+                <a href="/logout">Log Out </a> <!-- <button id="logginout">Bye, I'm High</button> -->
+           
         </div>
           
         </div>
@@ -17,45 +17,45 @@
     <form id="form" action="/addclub" method="POST">
         <label for="clubname">Clubname</label>
         <br>
-        <input type="text" name="clubname" placeholder="">
+        <input class="inputz"type="text" name="clubname" placeholder="">
 
         <br>
         <br>
         <label for="Location">Location</label>
         <br>
-        <input type="text" name="address" placeholder="">
+        <input class="inputz" type="text" name="address" placeholder="">
         <br>
         <br>
         <label for="Phonenumber">Phonenumber</lable>
             <br>
-            <input type="text" name="phonenumber" placeholder="">
+            <input class="inputz" type="text" name="phonenumber" placeholder="">
             <br>
             <br>
             <label for="website">Website</label>
             <br>
-            <input type="text" name="website" placeholder="">
+            <input class="inputz" type="text" name="website" placeholder="">
             <br>
             <br>
             <label for=“weed”>Best Type Weed</label>
             <br>
-            <input type=“text” name=“weed” placeholder=>
+            <input class="inputz" type=“text” name=“weed” placeholder=>
             <br>
             <br>
             <lable for=“opens”>Opens at</lable>
             <br>
-            <input type=“time” name=“open”>
+            <input class="inputz" type=“time” name=“open”>
             <br>
             <br>
             <lable for=“closes”>Closes at</lable>
             <br>
-            <input type=“time” name=“close”>
+            <input class="inputz" type=“time” name=“close”>
             <br>
             <br>
             <label>Location</label>
-            <input type="text" name="latitude" placeholder="">
-            <input type="text" name="longitude" placeholder="">
+            <input class="inputz" type="text" name="latitude" placeholder="">
+            <input class="inputz" type="text" name="longitude" placeholder="">
             <br>
             <br>
-            <input type="image" src="imgs/leaf.png">
+            <input  type="image" src="imgs/leaf.png">
     </form>
 </div>
