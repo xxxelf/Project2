@@ -25,6 +25,7 @@ html {
   height: 100%;
 }
 
+
 /* The hero image */
 
 .hero-image {
@@ -39,6 +40,7 @@ html {
   position: relative;
 }
 
+
 /* Place text in the middle of the image */
 
 .hero-text {
@@ -50,6 +52,7 @@ html {
   transform: translate(-50%, -50%);
   color: white;
 }
+
 .hero-textb {
   color: white;
 }
@@ -61,8 +64,8 @@ html {
 input {
   background: transparent;
   border: none;
- 
 }
+
 .inputz {
   background: transparent;
   border: none;
@@ -103,14 +106,7 @@ input.placeholder {
   text-align: center;
 }
 
-<<<<<<< HEAD
 
-/*MAP*/
-
-#map {
-  height: 400px;
-  width: 90%;
-=======
 /*MAP*/
 
 #map {
@@ -118,14 +114,15 @@ input.placeholder {
   width: 100%;
 }
 
-.loggedinas{
-  color:white;
+.loggedinas {
+  color: white;
 }
 
 
 /*dropdownbar*/
+
 .dropbtn {
-  background-color:transparent;
+  background-color: transparent;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -143,7 +140,7 @@ input.placeholder {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -153,35 +150,36 @@ input.placeholder {
   text-decoration: none;
   display: block;
 }
-#droptwo{
-  background:transparent;
+
+#droptwo {
+  background: transparent;
 }
+
 .dropdown-content a:hover {
-  background-color: #f1f1f1}
+  background-color: #f1f1f1
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
 .dropdown:hover .dropbtn {
-  background:transparent;
+  background: transparent;
 }
 
-#logginout{
-  color:black
+#logginout {
+  color: black
 }
 
-.inputlogin{
+.inputlogin {
   background: transparent;
   border: none;
   background-color: rgba(163, 163, 163, 0.4);
-  
 }
 
-.logsign{
-  background:transparent;
-  color:white;
-  text-decoration:none;
-  font-size:16px;
->>>>>>> 661a3fead10628f17a80a79919911413d1165d19
+.logsign {
+  background: transparent;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }

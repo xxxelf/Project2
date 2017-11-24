@@ -1,37 +1,23 @@
-<<<<<<< HEAD
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <title>Add Club</title>
-</head>
-
-<body>
-    <div class="hero-text">
-        <form id="form" action="/addclub" method="POST">
-            <label for="clubname">Clubname</label>
-=======
-<div><div class="dropdown">
+<div>
+    <div class="dropdown">
         <button class="dropbtn">logged in as
-                <%=user.username%></button>
+            <%=user.username%>
+        </button>
         <div class="dropdown-content">
-            <div >
+            <div>
                 <a href="/clubs">Clubs</a>
             </div>
             <div>
-                <a href="/logout">Log Out </a> 
-            </div> 
+                <a href="/logout">Log Out </a>
+            </div>
         </div>
-      </div></div>
+    </div>
+</div>
 <div class="hero-text">
     <form id="form" action="/addclub" method="POST">
         <label for="clubname">Clubname</label>
         <br>
-        <input class="inputz"type="text" name="clubname" placeholder="">
+        <input class="inputz" type="text" name="clubname" placeholder="">
 
         <br>
         <br>
@@ -44,13 +30,10 @@
             <br>
             <input class="inputz" type="text" name="phonenumber" placeholder="">
             <br>
->>>>>>> 661a3fead10628f17a80a79919911413d1165d19
             <br>
             <input type="text" name="clubname" placeholder="">
 
             <br>
-<<<<<<< HEAD
-=======
             <input class="inputz" type="text" name="website" placeholder="">
             <br>
             <br>
@@ -67,62 +50,14 @@
             <lable for=“closes”>Closes at</lable>
             <br>
             <input class="inputz" type=“time” name=“close”>
->>>>>>> 661a3fead10628f17a80a79919911413d1165d19
             <br>
             <label for="Location">Location</label>
             <br>
-<<<<<<< HEAD
-            <input type="text" name="address" placeholder="">
-            <br>
-            <br>
-            <label for="Phonenumber">Phonenumber</lable>
-                <br>
-                <input type="text" name="phonenumber" placeholder="">
-                <br>
-                <br>
-                <label for="website">Website</label>
-                <br>
-                <input type="text" name="website" placeholder="">
-                <br>
-                <br>
-                <label for="weed">Best Type Weed</label>
-                <!-- <br>
-                <input type="text" name="weed" placeholder=>
-                <br> -->
-                <br>
-                <lable for="opens">Opens at</lable>
-                <br>
-                <input type="time" name="open">
-                <br>
-                <br>
-                <lable for="closes">Closes at</lable>
-                <br>
-                <input type="time" name="close">
-                <br>
-                <br>
-                <label>Location</label>
-                <input type="text" name="latitude" placeholder="">
-                <input type="text" name="longitude" placeholder="">
-                <br>
-                <br>
-                <input type="image" src="imgs/leaf.png">
-        </form>
-    </div>
-    <% if (typeof(errorMessage) != "undefined") { %>
-        <div class="error-message">
-            <%= errorMessage %>
-        </div>
-        <% } %>
-</body>
-
-</html>
-=======
             <label>Location</label>
             <input class="inputz" type="text" name="latitude" placeholder="">
             <input class="inputz" type="text" name="longitude" placeholder="">
             <br>
             <br>
-            <input  type="image" src="imgs/leaf.png">
+            <input type="image" src="imgs/leaf.png">
     </form>
 </div>
->>>>>>> 661a3fead10628f17a80a79919911413d1165d19

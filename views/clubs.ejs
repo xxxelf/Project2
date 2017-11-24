@@ -1,65 +1,65 @@
-<<<<<<< HEAD
-<div class="herotext">
-=======
-<div><div class="dropdown">
+<div>
+    <div class="dropdown">
         <button class="dropbtn">logged in as
-                <%=user.username%></button>
+            <%=user.username%>
+        </button>
         <div class="dropdown-content">
-            <div >
+            <div>
                 <a href="/addclub">add club</a>
             </div>
+            <div>
                 <div>
-                        <div>
-                                
-                                    <a href="/logout">Log Out </a> <!-- <button id="logginout">Bye, I'm High</button> -->
-                               
-                            </div>
-          
+
+                    <a href="/logout">Log Out </a>
+                    <!-- <button id="logginout">Bye, I'm High</button> -->
+
+                </div>
+
+            </div>
         </div>
-      </div></div>
-<div class="hero-textb">
->>>>>>> 661a3fead10628f17a80a79919911413d1165d19
-    <h3>Weed Map</h3>
-    <div>
-        <div id="map"></div>
     </div>
-    <div id="clubs">
+    <div class="hero-textb">
+        <h3>Weed Map</h3>
+        <div>
+            <div id="map"></div>
+        </div>
+        <div id="clubs">
 
-        <table>
-            <tr>
-                <th>Club Name</th>
-                <th>Opens</th>
-                <th>Location</th>
-                <th>Rating</th>
-            </tr>
-
-            <% for(var i = 0; i<clubs.length; i++) { %>
+            <table>
                 <tr>
-                    <th>
-                        <%= clubs[i].clubname %>
-                    </th>
-                    <th>
-                        <%= clubs[i].address %>
-                    </th>
-                    <th>
-                        <%= clubs[i].phonenumber %>
-                    </th>
-                    <th>
-                        <a href="<%= clubs[i].website %>">Request Invitation</a>
-                    </th>
-
+                    <th>Club Name</th>
+                    <th>Opens</th>
+                    <th>Location</th>
+                    <th>Rating</th>
                 </tr>
-                <% } %>
 
-        </table>
+                <% for(var i = 0; i<clubs.length; i++) { %>
+                    <tr>
+                        <th>
+                            <%= clubs[i].clubname %>
+                        </th>
+                        <th>
+                            <%= clubs[i].address %>
+                        </th>
+                        <th>
+                            <%= clubs[i].phonenumber %>
+                        </th>
+                        <th>
+                            <a href="<%= clubs[i].website %>">Request Invitation</a>
+                        </th>
+
+                    </tr>
+                    <% } %>
+
+            </table>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-1tNNlCpFXcyHKKDmGy8PL2kCbA0PBpE">
+        </script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+        <script type="text/javascript">
+            var club = <%- JSON.stringify(clubs); %>
+        </script>
+        <script type="text/javascript" src="javascripts/main.js"></script>
+
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-1tNNlCpFXcyHKKDmGy8PL2kCbA0PBpE">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-    <script type="text/javascript">
-        var club = <%- JSON.stringify(clubs); %>
-    </script>
-    <script type="text/javascript" src="javascripts/main.js"></script>
-
-</div>
