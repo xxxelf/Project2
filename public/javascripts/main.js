@@ -8,15 +8,18 @@ function startMap() {
 
     const map = new google.maps.Map(document.getElementById('map'), {
         center: sol,
-        zoom: 14
+        zoom: 13
     });
 
     // Add clubs markers to map
     let markers = [];
+    console.log(club);
     club.forEach(function (club) {
-        var contentString = `<h2"> ${club.clubname}</h2>
-        <h3> ${club.address}</h3>
-        <h3> ${club.phonenumber}</h3>`
+        var contentString =
+            `<h2> ${club.clubname}</h2>
+        <a href="${club.website}">${club.website}</a>
+        <p> ${club.address}</p>
+        <p> ${club.phonenumber}</p>`
 
         let title = club.clubname;
         console.log(club.location);

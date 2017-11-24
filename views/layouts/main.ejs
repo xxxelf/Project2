@@ -22,9 +22,9 @@
 
 
 
-            <div>
+            <div id="user">
                 <% if (user) { %>
-                    <p>logged in as
+                    <p>
                         <%=user.username%>
                     </p>
                     <form action="/logout" method="post">

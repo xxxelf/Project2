@@ -10,36 +10,52 @@
 </head>
 
 <body>
-    <form id="form" action="/addclub" method="POST">
-        <label for="clubname">Clubname</label>
-        <br>
-        <input type="text" name="clubname" placeholder="">
+    <div class="hero-text">
+        <form id="form" action="/addclub" method="POST">
+            <label for="clubname">Clubname</label>
+            <br>
+            <input type="text" name="clubname" placeholder="">
 
-        <br>
-        <br>
-        <label for="Location">Location</label>
-        <br>
-        <input type="text" name="address" placeholder="">
-        <br>
-        <br>
-        <label for="Phonenumber">Phonenumber</lable>
-            <br>
-            <input type="text" name="phonenumber" placeholder="">
             <br>
             <br>
-            <label for="website">Website</label>
+            <label for="Location">Location</label>
             <br>
-            <input type="text" name="website" placeholder="">
-            <br>
-            <br>
-            <label>Location</label>
-            <input type="text" name="latitude" placeholder="">
-            <input type="text" name="longitude" placeholder="">
+            <input type="text" name="address" placeholder="">
             <br>
             <br>
-            <input type="submit" value="Add">
-    </form>
-
+            <label for="Phonenumber">Phonenumber</lable>
+                <br>
+                <input type="text" name="phonenumber" placeholder="">
+                <br>
+                <br>
+                <label for="website">Website</label>
+                <br>
+                <input type="text" name="website" placeholder="">
+                <br>
+                <br>
+                <label for="weed">Best Type Weed</label>
+                <!-- <br>
+                <input type="text" name="weed" placeholder=>
+                <br> -->
+                <br>
+                <lable for="opens">Opens at</lable>
+                <br>
+                <input type="time" name="open">
+                <br>
+                <br>
+                <lable for="closes">Closes at</lable>
+                <br>
+                <input type="time" name="close">
+                <br>
+                <br>
+                <label>Location</label>
+                <input type="text" name="latitude" placeholder="">
+                <input type="text" name="longitude" placeholder="">
+                <br>
+                <br>
+                <input type="image" src="imgs/leaf.png">
+        </form>
+    </div>
     <% if (typeof(errorMessage) != "undefined") { %>
         <div class="error-message">
             <%= errorMessage %>

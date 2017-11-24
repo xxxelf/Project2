@@ -5,6 +5,8 @@ const clubSchema = new Schema({
     clubname: String,
     address: String,
     phonenumber: String,
+    website: String,
+    // weed: String,
     location: {
         type: {
             type: String

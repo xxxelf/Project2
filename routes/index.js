@@ -58,6 +58,7 @@ router.post("/addclub", ensureAuthenticated, (req, res, next) => {
   const address = req.body.address;
   const phonenumber = req.body.phonenumber;
   const website = req.body.website;
+  const weed = req.body.weed;
   // Validation
   if (clubname === "" || phonenumber === "" || req.body.latitude === "" || req.body.longitude === "") {
     res.render("addclub", {

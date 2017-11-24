@@ -1,4 +1,4 @@
-< <div class="herotext">
+<div class="herotext">
     <h3>Weed Map</h3>
     <div id="map"></div>
 
@@ -11,7 +11,24 @@
                 <th>Location</th>
                 <th>Rating</th>
             </tr>
-            <tr>
+
+            <% for(var i = 0; i<clubs.length; i++) { %>
+                <tr>
+                    <th>
+                        <%= clubs[i].clubname %>
+                    </th>
+                    <th>
+                        <%= clubs[i].address %>
+                    </th>
+                    <th>
+                        <%= clubs[i].phonenumber %>
+                    </th>
+                    <th>
+                        <a href="<%= clubs[i].website %>">Request Invitation</a>
+                    </th>
+
+                </tr>
+                <% } %>
 
         </table>
     </div>
@@ -20,8 +37,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
     <script type="text/javascript">
-        var club = <% - JSON.stringify(clubs); %>
+        var club = <%- JSON.stringify(clubs); %>
     </script>
     <script type="text/javascript" src="javascripts/main.js"></script>
 
-    </div>
+</div>
